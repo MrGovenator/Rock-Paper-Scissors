@@ -9,11 +9,14 @@
 <body>
     <script>
         
+        //container function for the game
         function game(){
-        
+            
+            //loop to play game 5 times
             let i = 0
             for(i = 0; i < 5; i++){
-
+            
+            //function for computer to make random play
             function computerPlay(){
                 let computerNum = Math.round(Math.random() * 2);
 
@@ -31,6 +34,7 @@
                 }
             };
 
+            //function to prompt player to make a play
             function playerPlay(){
                 let playerPlays = window.prompt("Enter either Rock Paper or Scissors to play the game");
                 let playerLowercase = playerPlays.toLocaleLowerCase(); 
@@ -53,7 +57,7 @@
                 }
             };
 
-            
+            //function that takes both player and computer outcomes and compares for winner
             function playRound(computerSelection, playerSelection){
                 if(playerSelection == "Rock" && computerSelection == "Scissors"){
                     return("You win")
@@ -68,7 +72,8 @@
                     return "You lose"
                 };
             };
-
+            
+            //display to console
             let computerSelection = computerPlay()
             let playerSelection = playerPlay()
             console.log(playRound(computerSelection, playerSelection))
